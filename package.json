@@ -1,0 +1,11 @@
+{
+  "name": "semester-project-2-erlhal",
+  "version": "1.0.0",
+  "description": "The client has specified the following requirements in the form of User Stories:\r - A user with a stud.noroff.no email may register.\r - A registered user may login\r - A registered user may logout\r - A registered user may update their avatar\r - A registered user may view their total credit\r - A registered user may create a Listing with a title, deadline date, media gallery and\r  description.\r - A registered user may add a Bid to another userʼs Listing\r - A registered user may view bid's made on a listing.\r - An unregistered user may search through listings.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "erlhal",
+  "license": "ISC"
+}
