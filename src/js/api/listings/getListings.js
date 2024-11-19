@@ -1,4 +1,4 @@
-import { API_ALL_LISTINGS } from "../constanst.js";
+import { API_ALL_LISTINGS } from "../../utils/constanst.js";
 
 export async function getListings() {
   try {

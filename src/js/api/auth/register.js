@@ -1,5 +1,5 @@
-import { getHeaders } from "../headers.js";
-import { API_AUTH_REGISTER } from "../constanst.js";
+import { getHeaders } from "../../utils/headers.js";
+import { API_AUTH_REGISTER } from "../../utils/constanst.js";
 
 export async function getRegisterUser({ name, email, password }) {
   const data = {
