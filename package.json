@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "live": "live-server",
-    "css:build": "postcss -i src/css/input.css -o src/css/output.css"
+    "css:build": "tailwindcss -i src/css/input.css -o src/css/output.css"
   },
   "author": "erlhal",
   "license": "ISC",
