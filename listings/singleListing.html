@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="/src/css/output.css" />
+    <script type="module" src="/src/js/views/listings/listingById.js"></script>
   </head>
   <body>
     <header>
@@ -14,5 +15,76 @@
         <a href="./auth/register.html">Register</a>
       </div>
     </header>
+    <section id="listing-from-id">
+      <div class="flex flex-col p-6 bg-green-700 rounded-lg shadow-md">
+        <!-- Listing Image -->
+        <div class="mb-6">
+          <img
+            src="/src/media/Komplett_wallpaper_2022_3rdplace_preciousillusion_dark.jpg"
+            alt="Product Image"
+            class="w-full h-64 object-cover rounded-md"
+          />
+        </div>
+
+        <!-- Product Details -->
+        <div class="mb-6">
+          <h1 class="text-2xl font-bold text-gray-800 mb-2">Product Title</h1>
+          <p class="text-gray-600 mb-4">
+            This is a placeholder text for the product description. It provides
+            an overview of the listing, including features, specifications, and
+            other relevant details.
+          </p>
+          <p class="text-gray-700">
+            <strong>Ends At:</strong> 2024-12-01 12:00 PM
+          </p>
+        </div>
+
+        <!-- Bids Table -->
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold text-gray-800 mb-4">Bid History</h2>
+          <table class="w-full border border-gray-200 text-left text-sm">
+            <thead class="bg-gray-100">
+              <tr>
+                <th class="border border-gray-200 px-4 py-2">Bidder</th>
+                <th class="border border-gray-200 px-4 py-2">Amount</th>
+                <th class="border border-gray-200 px-4 py-2">Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border border-gray-200 px-4 py-2">John Doe</td>
+                <td class="border border-gray-200 px-4 py-2">$150</td>
+                <td class="border border-gray-200 px-4 py-2">
+                  2024-11-20 10:15 AM
+                </td>
+              </tr>
+              <tr class="bg-gray-50">
+                <td class="border border-gray-200 px-4 py-2">Jane Smith</td>
+                <td class="border border-gray-200 px-4 py-2">$200</td>
+                <td class="border border-gray-200 px-4 py-2">
+                  2024-11-20 11:00 AM
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-200 px-4 py-2">Michael Brown</td>
+                <td class="border border-gray-200 px-4 py-2">$250</td>
+                <td class="border border-gray-200 px-4 py-2">
+                  2024-11-21 01:30 PM
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="text-center">
+          <button
+            class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
+          >
+            Place a Bid
+          </button>
+        </div>
+      </div>
+    </section>
   </body>
 </html>
