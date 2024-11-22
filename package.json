@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "live": "live-server",
-    "css:build": "tailwindcss -i src/css/input.css -o src/css/output.css"
+    "css:build": "tailwindcss -i src/css/input.css -o src/css/output.css",
+    "css:watch": "tailwindcss -i src/css/input.css -o src/css/output.css --watch",
+    "dev": "npm-run-all --parallel live css:watch"
   },
   "author": "erlhal",
   "license": "ISC",

@@ -10,7 +10,7 @@ export async function getListings(limit = 22, page = 1) {
       throw new Error(response.message);
     }
     response = await response.json();
-    const data = response.data;
+    let data = response.data;
 
     return data;
   } catch (error) {

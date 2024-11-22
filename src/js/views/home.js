@@ -1,14 +1,25 @@
 import { getListings } from "../api/listings/getListings.js";
+import { getHighestBid } from "../utils/getBids.js";
+import FooterBar from "../components/header.js";
+
+customElements.define("footer-bar", FooterBar);
 
 async function renderListings() {
   const listings = await getListings(22, 1);
+
   console.log(listings);
+
+  //if (listings.)
+
   const listingsContainer = document.querySelector("#listings");
-  if (listings === 0) {
-    listingsContainer.innerHTML = `<h2>No listings available</h2>`;
-  }
   let html = "";
   listings.map((listing) => {
+    let highestBid = "No bids yet";
+    if (listing.bids.length > 0) {
+      highestBid = getHighestBid(listing.bids);
+    }
+
+    //console.log(listing);
     html += `
     <a href="/listings/singleListing.html?id=${listing.id}">
         <div
@@ -24,12 +35,13 @@ async function renderListings() {
           <p
             class="absolute bottom-4 left-4 text-white bg-black bg-opacity-50 p-2 rounded-md"
           >
-            $200
+            ${highestBid}
           </p>
         </div>
         <div class="py-2 bg-white rounded-b-md text-center">
-          <span>Tags</span>
+          <span>${listing.tags}</span>
           <h2 class="font-bold text-xl">${listing.title}</h2>
+          <p>${listing.endsAt}</p>
         </div>
       </a>
     `;
