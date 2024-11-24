@@ -6,3 +6,4 @@ export const API_AUTH_LOGIN = `${API_AUTH}/login`;
 export const API_AUCTION_BASE = `${API_BASE}/auction/listings`;
 export const API_ALL_LISTINGS = `${API_BASE}/auction/listings?limit=22&_seller=true&_bids=true`;
 export const API_SINGLE_LISTING = `${API_ALL_LISTINGS}/<id>`;
+export const API_GET_PROFILE = `${API_BASE}/auction/profiles`;

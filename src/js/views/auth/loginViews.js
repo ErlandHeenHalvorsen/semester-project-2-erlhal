@@ -1,4 +1,5 @@
 import { getLogin } from "../../api/auth/login.js";
+import { setUsername } from "../../utils/storage.js";
 const loginBtn = document.querySelector("#login-btn");
 
 loginBtn.addEventListener("click", async (e) => {
@@ -8,6 +9,7 @@ loginBtn.addEventListener("click", async (e) => {
   try {
     const loginUser = await getLogin(email, password);
     if (loginUser) {
+      setUsername(loginUser.name);
       console.log("User logged in successfully:", loginUser);
       //window.location.href = "/";
     }

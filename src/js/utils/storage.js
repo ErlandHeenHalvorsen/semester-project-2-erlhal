@@ -22,17 +22,10 @@ export function getToken() {
     return null;
   }
 }
-/*
-export function setUserData(username, email, avatarUrl) {
-  const userData = {
-    username: username,
-    email: email,
-    avatarUrl: avatarUrl,
-  };
-  try {
-    localStorage.setItem("userData", JSON.stringify(userData));
-  } catch (error) {
-    console.error(error);
-  }
+export function setUsername(username) {
+  localStorage.setItem("username", username);
 }
- */
+
+export function getUsername() {
+  return localStorage.getItem("username");
+}
