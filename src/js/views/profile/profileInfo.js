@@ -1,11 +1,12 @@
 import { getProfile } from "../../api/profile/getProfile.js";
-import { getProfileListings } from "../../api/profile/getProfile.js";
+import { getProfileListings } from "../../api/profile/profileListings.js";
+import { getHighestBid } from "../../utils/getBids.js";
 
 async function renderProfileInfo() {
   const infoSection = document.querySelector("#userInfo");
   let profile = await getProfile();
   profile = profile.data;
-  console.log(profile);
+  // console.log(profile);
   let html = `
     <div class="">
         <div class="flex bg-gray-400 items-center justify-between">
@@ -27,4 +28,48 @@ async function renderProfileInfo() {
   infoSection.innerHTML = html;
 }
 renderProfileInfo();
-getProfileListings();
+
+async function renderProfileListings() {
+  const listingSection = document.querySelector("#userListings");
+  let listings = await getProfileListings();
+  if (listings === 0) {
+    listingSection.innerHTML = "<p>This user has no listings...</p>";
+    return;
+  }
+  console.log(listings.map((listing) => listing));
+
+  let html = "";
+  html += listings.map((listing) => {
+    let highestBid = "No bids yet";
+    if (listing.bids.length > 0) {
+      highestBid = getHighestBid(listing.bids);
+    }
+    return `
+    <a href="/html/listings/singleListing.html?id=${listing.id}">
+        <div
+          class="w-[300px] h-[200px] bg-white flex flex-col justify-between rounded-t-md overflow-hidden shadow-sm relative"
+        >
+        ${
+          listing.media && listing.media[0]
+            ? `<img class="w-full h-full object-cover" src="${
+                listing.media[0].url
+              }" alt="${listing.media.alt ? listing.media.alt : ""}" />`
+            : `<img class="w-full h-full object-cover" src="/src/media/Komplett_wallpaper_2022_3rdplace_preciousillusion_dark.jpg" alt="Random image" />`
+        } 
+          <p
+            class="absolute bottom-4 left-4 text-white bg-black bg-opacity-50 p-2 rounded-md"
+          >
+            ${highestBid}
+          </p>
+        </div>
+        <div class="py-2 bg-white rounded-b-md text-center">
+          <span>${listing.tags}</span>
+          <h2 class="font-bold text-xl">${listing.title}</h2>
+          <p>${listing.endsAt}</p>
+        </div>
+      </a>
+    `;
+  });
+  listingSection.innerHTML = html;
+}
+renderProfileListings();

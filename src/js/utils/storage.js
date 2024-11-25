@@ -5,7 +5,7 @@ export function setToken(token) {
     setTimeout(() => {
       localStorage.removeItem("token");
       console.log("Token has been cleared after expiration time.");
-    }, 7200000); // after 2 hours local storage is cleared.
+    }, 720000); // after 2 hours local storage is cleared.
 
     return true;
   } catch (error) {
@@ -24,6 +24,10 @@ export function getToken() {
 }
 export function setUsername(username) {
   localStorage.setItem("username", username);
+  setTimeout(() => {
+    localStorage.removeItem("username");
+    console.log("Username has been cleared after expiration time.");
+  }, 720000); // after 2 hours local storage is cleared.
 }
 
 export function getUsername() {

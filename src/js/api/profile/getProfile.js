@@ -19,16 +19,4 @@ export async function getProfile() {
     console.error(`Response status: ${error.status}: ${error.statusText} `);
   }
 }
-export async function getProfileListings() {
-  try {
-    let response = await fetch(`${API_GET_PROFILE}/${username}/listings`, {
-      method: "GET",
-      headers: getHeaders(),
-    });
-    response = await response.json();
-    let res = response.data;
-    console.log(res);
-  } catch (error) {
-    console.error(error);
-  }
-}
+
