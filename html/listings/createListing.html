@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/css/output.css" />
+    <script
+      type="module"
+      src="/src/js/views/listings/createListing.js"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <div>
+        <a href="/index.html">Home</a>
+        <a href="/html/profile/userProfile.html">Profile</a>
+        <a href="/html/auth/login.html">Login</a>
+        <a href="/html/auth/register.html">Register</a>
+      </div>
+    </header>
+    <main>
+      <div class="flex flex-col p-4 m-4 rounded-md shadow-md bg-gray-400">
+        <h1 class="font-bold">Make Listing</h1>
+        <form name="createListing" id="createForm" class="space-y-4">
+          <!-- Title -->
+          <div>
+            <label for="title" class="block text-sm font-medium text-gray-700"
+              >Title</label
+            >
+            <input
+              type="text"
+              id="create-title"
+              name="title"
+              class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm outline-none"
+              placeholder="Enter title"
+            />
+          </div>
+
+          <!-- Description -->
+          <div>
+            <label
+              for="description"
+              class="block text-sm font-medium text-gray-700"
+              >Description</label
+            >
+            <textarea
+              id="create-description"
+              name="description"
+              rows="4"
+              class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm outline-none"
+              placeholder="Enter description"
+            ></textarea>
+          </div>
+
+          <!-- Tags -->
+          <div>
+            <label for="tags" class="block text-sm font-medium text-gray-700"
+              >Tags</label
+            >
+            <input
+              type="text"
+              id="create-tags"
+              name="tags"
+              class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm outline-none"
+              placeholder="Enter tags (comma-separated)"
+            />
+          </div>
+
+          <!-- Image URL -->
+          <div>
+            <label
+              for="image-url"
+              class="block text-sm font-medium text-gray-700"
+              >Image URL</label
+            >
+            <input
+              type="url"
+              id="create-image-url"
+              name="image-url"
+              class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm outline-none"
+              placeholder="Enter image URL"
+            />
+          </div>
+
+          <!-- Ends At -->
+          <div>
+            <label for="ends-at" class="block text-sm font-medium text-gray-700"
+              >Ends At</label
+            >
+            <input
+              type="datetime-local"
+              id="create-ends-at"
+              name="ends-at"
+              class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm outline-none"
+            />
+          </div>
+
+          <!-- Submit Button -->
+          <div class="flex justify-end">
+            <button
+              id="create-btn"
+              type="submit"
+              class="bg-blue-500 text-white px-4 py-2 rounded-lg shadow"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

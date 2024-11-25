@@ -16,7 +16,12 @@
     <section>
       <form>
         <label for="email">email</label>
-        <input id="login-email" type="email" name="email" />
+        <input
+          id="login-email"
+          type="email"
+          name="email"
+          pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+        />
         <label for="password">Password</label>
         <input id="login-password" type="password" />
         <button id="login-btn" tupe="submit">Login</button>

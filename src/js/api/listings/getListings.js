@@ -3,7 +3,7 @@ import { API_AUCTION_BASE } from "../../utils/constanst.js";
 export async function getListings(limit = 22, page = 1) {
   try {
     let response = await fetch(
-      `${API_AUCTION_BASE}?limit=${limit}&page=${page}&_bids=true&_active=true`
+      `${API_AUCTION_BASE}?sort=created&sortOrder=desc&limit=${limit}&page=${page}&_seller=true&_bids=true&_active=true`
     );
     if (!response.ok) {
       throw new Error(response.message);

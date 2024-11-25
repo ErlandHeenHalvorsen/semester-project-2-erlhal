@@ -21,12 +21,12 @@ async function renderListings() {
 
     //console.log(listing);
     html += `
-    <a href="/listings/singleListing.html?id=${listing.id}">
+    <a href="/html/listings/singleListing.html?id=${listing.id}">
         <div
           class="w-[300px] h-[200px] bg-white flex flex-col justify-between rounded-t-md overflow-hidden shadow-sm relative"
         >
         ${
-          listing.media && listing.media[0].url
+          listing.media && listing.media[0]
             ? `<img class="w-full h-full object-cover" src="${
                 listing.media[0].url
               }" alt="${listing.media.alt ? listing.media.alt : ""}" />`

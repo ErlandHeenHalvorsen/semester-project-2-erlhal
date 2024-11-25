@@ -71,19 +71,23 @@ async function renderListingFromId() {
                 <th class="border border-gray-200 px-4 py-2">Time</th>
               </tr>
             </thead>
-            <tbody>
+             <tbody>
               <tr>
                 <td class="border border-gray-200 px-4 py-2">${
-                  listing.bids[0].bidder.name
+                  listing.bids?.length > 0 ? listing.bids[0].bidder.name : ""
                 }</td>
                 <td class="border border-gray-200 px-4 py-2">${
-                  listing.bids[0].amount
+                  listing.bids?.length > 0 ? listing.bids[0].amount : ""
                 }</td>
                 <td class="border border-gray-200 px-4 py-2">
-                  ${listing.bids[0].created}
+                  ${
+                    listing.bids?.length > 0
+                      ? listing.bids[0].created || ""
+                      : ""
+                  }
                 </td>
               </tr>
-            </tbody>
+            </tbody> 
           </table>
         </div>
       </div>
