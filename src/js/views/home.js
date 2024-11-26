@@ -5,7 +5,7 @@ import FooterBar from "../components/header.js";
 customElements.define("footer-bar", FooterBar);
 
 async function renderListings() {
-  const listings = await getListings(22, 1);
+  const listings = await getListings(26, 1);
 
   console.log(listings);
 
@@ -21,11 +21,11 @@ async function renderListings() {
 
     //console.log(listing);
     html += `
-    <a class="shadow-sm hover:shadow-md" href="/html/listings/singleListing.html?id=${
+    <a class="shadow-sm hover:shadow-md transition-all ease-in-out duration-150" href="/html/listings/singleListing.html?id=${
       listing.id
     }">
         <div
-          class="w-[300px] h-[200px] bg-white flex flex-col justify-between rounded-t-md overflow-hidden relative"
+          class="w-[300px] h-[200px] bg-white  flex flex-col justify-between rounded-t-md overflow-hidden relative"
         >
         ${
           listing.media && listing.media[0]
@@ -40,7 +40,7 @@ async function renderListings() {
             ${highestBid}
           </p>
         </div>
-        <div class="py-2 bg-white rounded-b-md text-center">
+        <div class="py-2 bg-white hover:bg-gray-100 rounded-b-md text-center transition-all">
           <span>${listing.tags}</span>
           <h2 class="font-bold text-xl">${listing.title}</h2>
           <p>${listing.endsAt}</p>

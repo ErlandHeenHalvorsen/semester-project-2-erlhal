@@ -10,7 +10,7 @@ async function renderListingFromId() {
   const listing = await getListingFromId(id);
   console.log(listing);
   let html = `
-    <div class="flex flex-col p-6 mx-4 my-6 rounded-lg shadow-xl">
+    <div class="flex flex-col p-6 mx-4 my-6 border border-1 border-gray-200 rounded-lg shadow-md">
         <!-- Listing Image -->
         <div class="mb-6">
           <img
@@ -58,20 +58,20 @@ async function renderListingFromId() {
           <table class="w-full border border-gray-200 text-left text-sm">
             <thead class="bg-gray-100">
               <tr>
-                <th class="border border-gray-200 px-4 py-2">Bidder</th>
-                <th class="border border-gray-200 px-4 py-2">Amount</th>
-                <th class="border border-gray-200 px-4 py-2">Time</th>
+                <th class="border border-gray-200 px-2 py-2">Bidder</th>
+                <th class="border border-gray-200 px-2 py-2">Amount</th>
+                <th class="border border-gray-200 px-2 py-2">Time</th>
               </tr>
             </thead>
              <tbody>
               <tr>
-                <td class="border border-gray-200 px-4 py-2">${
+                <td class="border border-gray-200 px-2 py-2">${
                   listing.bids?.length > 0 ? listing.bids[0].bidder.name : ""
                 }</td>
-                <td class="border border-gray-200 px-4 py-2">${
+                <td class="border border-gray-200 px-2 py-2">${
                   listing.bids?.length > 0 ? listing.bids[0].amount : ""
                 }</td>
-                <td class="border border-gray-200 px-4 py-2">
+                <td class="border border-gray-200 px-2 py-2">
                   ${
                     listing.bids?.length > 0
                       ? listing.bids[0].created || ""

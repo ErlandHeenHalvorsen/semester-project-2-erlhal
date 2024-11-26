@@ -19,10 +19,70 @@
     </header>
     <section id="userInfo" class=""></section>
     <hr />
-    <hr />
+    <section id="update-profile-section">
+      <button
+        id="toggle-update-profile"
+        class="bg-blue-500 text-white m-4 px-4 py-2 rounded-lg shadow"
+      >
+        Update Profile
+      </button>
+      <div
+        id="hidden-form"
+        class="hidden p-4 m-4 rounded-md shadow-md bg-gray-400"
+      >
+        <form class="space-y-2">
+          <div>
+            <label for="avatar" class="block text-sm font-medium text-gray-700"
+              >Update Avatar</label
+            >
+            <input
+              type="url"
+              name="avatar"
+              class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm outline-none"
+              placeholder="Enter avatar url"
+            />
+          </div>
+          <div>
+            <label
+              for="description"
+              class="block text-sm font-medium text-gray-700"
+              >Update Bio</label
+            >
+            <textarea
+              name="description"
+              id="update-description"
+              rows="4"
+              class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm outline-none"
+              placeholder="Enter description"
+            ></textarea>
+          </div>
+          <div class="flex flex-wrap justify-between items-center w-full">
+            <button
+              type="submit"
+              class="bg-blue-500 text-white px-4 py-2 rounded-lg shadow"
+            >
+              Update
+            </button>
+            <span id="close-tag" class="relative group">
+              <img
+                class="h-4 cursor-pointer"
+                src="/icons/cancel.png"
+                alt="close"
+              />
+              <!-- Tooltip -->
+              <span
+                class="absolute bottom-full left-1/2 transform -translate-x-1/2 mt-1 bg-gray-700 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity"
+              >
+                Close
+              </span>
+            </span>
+          </div>
+        </form>
+      </div>
+    </section>
     <section
       id="userListings"
-      class="bg-gray-200 flex justify-center items-center flex-wrap gap-6 p-8"
+      class="bg-gray-100 flex my-4 justify-center items-center flex-wrap gap-6 p-8"
     ></section>
   </body>
 </html>

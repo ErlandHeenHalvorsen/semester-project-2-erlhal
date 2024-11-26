@@ -2,12 +2,13 @@ import { getProfile } from "../../api/profile/getProfile.js";
 import { getProfileListings } from "../../api/profile/profileListings.js";
 import { getHighestBid } from "../../utils/getBids.js";
 
-async function renderProfileInfo() {
-  const infoSection = document.querySelector("#userInfo");
-  let profile = await getProfile();
-  profile = profile.data;
-  // console.log(profile);
-  let html = `
+document.addEventListener("DOMContentLoaded", function () {
+  async function renderProfileInfo() {
+    const infoSection = document.querySelector("#userInfo");
+    let profile = await getProfile();
+    profile = profile.data;
+    // console.log(profile);
+    let html = `
     <div class="">
         <div class="flex bg-gray-400 items-center justify-between">
           <img
@@ -25,26 +26,26 @@ async function renderProfileInfo() {
         </p>
       </div>
     `;
-  infoSection.innerHTML = html;
-}
-renderProfileInfo();
-
-async function renderProfileListings() {
-  const listingSection = document.querySelector("#userListings");
-  let listings = await getProfileListings();
-  if (listings === 0) {
-    listingSection.innerHTML = "<p>This user has no listings...</p>";
-    return;
+    infoSection.innerHTML = html;
   }
-  console.log(listings.map((listing) => listing));
+  renderProfileInfo();
 
-  let html = "";
-  html += listings.map((listing) => {
-    let highestBid = "No bids yet";
-    if (listing.bids.length > 0) {
-      highestBid = getHighestBid(listing.bids);
+  async function renderProfileListings() {
+    const listingSection = document.querySelector("#userListings");
+    let listings = await getProfileListings();
+    if (listings === 0) {
+      listingSection.innerHTML = "<p>This user has no listings...</p>";
+      return;
     }
-    return `
+    console.log(listings.map((listing) => listing));
+
+    let html = "";
+    html += listings.map((listing) => {
+      let highestBid = "No bids yet";
+      if (listing.bids.length > 0) {
+        highestBid = getHighestBid(listing.bids);
+      }
+      return `
     <a href="/html/listings/singleListing.html?id=${listing.id}">
         <div
           class="w-[300px] h-[200px] bg-white flex flex-col justify-between rounded-t-md overflow-hidden shadow-sm relative"
@@ -69,7 +70,22 @@ async function renderProfileListings() {
         </div>
       </a>
     `;
+    });
+    listingSection.innerHTML = html;
+  }
+  renderProfileListings();
+
+  const toggleEditProfile = document.querySelector("#toggle-update-profile");
+  const formToToggle = document.querySelector("#hidden-form");
+  const closeTag = document.querySelector("#close-tag");
+  toggleEditProfile.addEventListener("click", function () {
+    formToToggle.classList.toggle("hidden");
+    toggleEditProfile.classList.add("hidden");
+    if (!formToToggle.classList.contains("hidden")) {
+      closeTag.addEventListener("click", function () {
+        formToToggle.classList.add("hidden");
+        toggleEditProfile.classList.remove("hidden");
+      });
+    }
   });
-  listingSection.innerHTML = html;
-}
-renderProfileListings();
+});
