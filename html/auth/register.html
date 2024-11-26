@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script type="module" src="/src/js/views/auth/registerView.js"></script>
+    <link rel="stylesheet" href="/src/css/output.css" />
   </head>
   <body>
     <header>
@@ -13,35 +14,62 @@
         <a href="./login.html">Login</a>
       </div>
     </header>
-    <section>
-      <h1>Register</h1>
-      <form>
-        <label for="username">Username</label>
-        <input
-          id="username-input"
-          type="text"
-          name="username"
-          pattern="^[\w]+$"
-        />
-        <label for="email">Email</label>
-        <input
-          id="email-input"
-          type="email"
-          name="email"
-          pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
-          required
-        />
-        <label for="password">Password</label>
-        <input
-          id="password-input"
-          type="password"
-          name="password"
-          a
-          minlength="8"
-          required
-        />
-        <button id="register-btn" type="submit">submit</button>
-      </form>
+    <section class="mt-8">
+      <div class="flex flex-col p-4 m-4 rounded-md shadow-md bg-gray-400">
+        <h1 class="font-bold text-xl mb-4">Register</h1>
+        <form class="space-y-4">
+          <div>
+            <label
+              for="username"
+              class="block text-sm font-medium text-gray-700"
+              >Username</label
+            >
+            <input
+              id="username-input"
+              class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm outline-none"
+              type="text"
+              name="username"
+              pattern="^[\w]+$"
+            />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700"
+              >Email</label
+            >
+            <input
+              id="email-input"
+              class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm outline-none"
+              type="email"
+              name="email"
+              pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+              required
+            />
+          </div>
+          <div>
+            <label
+              for="password"
+              class="block text-sm font-medium text-gray-700"
+              >Password</label
+            >
+            <input
+              id="password-input"
+              class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm outline-none"
+              type="password"
+              name="password"
+              a
+              minlength="8"
+              required
+            />
+          </div>
+          <button
+            id="register-btn"
+            class="bg-blue-500 text-white px-4 py-2 rounded-lg shadow"
+            type="submit"
+          >
+            submit
+          </button>
+        </form>
+      </div>
     </section>
   </body>
 </html>

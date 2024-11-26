@@ -21,9 +21,11 @@ async function renderListings() {
 
     //console.log(listing);
     html += `
-    <a href="/html/listings/singleListing.html?id=${listing.id}">
+    <a class="shadow-sm hover:shadow-md" href="/html/listings/singleListing.html?id=${
+      listing.id
+    }">
         <div
-          class="w-[300px] h-[200px] bg-white flex flex-col justify-between rounded-t-md overflow-hidden shadow-sm relative"
+          class="w-[300px] h-[200px] bg-white flex flex-col justify-between rounded-t-md overflow-hidden relative"
         >
         ${
           listing.media && listing.media[0]
