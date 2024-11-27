@@ -1,6 +1,7 @@
 import { getListings } from "../api/listings/getListings.js";
 import { getHighestBid } from "../utils/getBids.js";
 import FooterBar from "../components/header.js";
+import { logout } from "../utils/logout.js";
 
 customElements.define("footer-bar", FooterBar);
 
@@ -51,3 +52,5 @@ async function renderListings() {
   listingsContainer.innerHTML = html;
 }
 renderListings();
+const logoutBtn = document.querySelector("#logout-btn");
+logoutBtn.addEventListener("click", logout);

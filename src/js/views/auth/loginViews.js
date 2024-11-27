@@ -11,7 +11,7 @@ loginBtn.addEventListener("click", async (e) => {
     if (loginUser) {
       setUsername(loginUser.name);
       console.log("User logged in successfully:", loginUser);
-      //window.location.href = "/";
+      window.location.href = "/";
     }
   } catch (error) {
     console.error(error);

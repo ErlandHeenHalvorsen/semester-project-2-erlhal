@@ -1,6 +1,9 @@
 import { getProfile } from "../../api/profile/getProfile.js";
 import { getProfileListings } from "../../api/profile/profileListings.js";
 import { getHighestBid } from "../../utils/getBids.js";
+import { authGuard } from "../../utils/authGuard.js";
+
+authGuard();
 
 document.addEventListener("DOMContentLoaded", function () {
   async function renderProfileInfo() {

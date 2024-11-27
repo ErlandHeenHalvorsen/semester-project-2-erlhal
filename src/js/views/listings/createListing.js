@@ -1,4 +1,8 @@
 import { newPost } from "../../api/listings/createListing.js";
+import { authGuard } from "../../utils/authGuard.js";
+
+authGuard();
+
 const createBtn = document.querySelector("#create-btn");
 
 async function onCreateListing(event) {
