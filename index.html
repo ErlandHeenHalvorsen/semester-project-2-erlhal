@@ -7,26 +7,75 @@
     <script type="module" src="/src/js/views/home.js"></script>
     <link rel="stylesheet" href="/src/css/output.css" />
   </head>
-  <body class="flex flex-col min-h-screen">
-    <header>
-      <div>
-        <a href="/html/profile/userProfile.html">Profile</a>
-        <a href="/html/auth/login.html">Login</a>
-        <a href="/html/auth/register.html">Register</a>
+  <body class="min-h-screen">
+    <header class="block bg-gray-400 p-4 shadow-xl">
+      <!-- Desktop Navigation -->
+      <div class="flex items-center justify-between">
+        <div class="space-x-2">
+          <img
+            class="w-16 hover:scale-110 transition duration-200"
+            src="/src/media/auctionBear_cropped_no_bg.png"
+            alt="Auction Bear"
+          />
+        </div>
+        <!-- Navigation Links -->
+        <nav class="flex space-x-6">
+          <a
+            href="/html/profile/userProfile.html"
+            class="hover:text-yellow-400 transition duration-200"
+            >Profile</a
+          >
+          <a
+            href="/html/auth/login.html"
+            class="hover:text-yellow-400 transition duration-200"
+            >Login</a
+          >
+          <a
+            href="/html/auth/register.html"
+            class="hover:text-yellow-400 transition duration-200"
+            >Register</a
+          >
+        </nav>
+        <!-- Logout Button -->
+        <div>
+          <button
+            id="logout-btn"
+            class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded transition duration-200"
+          >
+            Logout
+          </button>
+        </div>
       </div>
-      <div>
-        <button id="logout-btn">logout</button>
+      <!-- Mobile Navigation -->
+      <div class="mt-4 text-white rounded-md shadow-lg">
+        <nav class="flex flex-col space-y-4 p-4">
+          <a href="" class="block text-sm font-medium transition duration-200"
+            >Petrine</a
+          >
+          <a href="" class="block text-sm font-medium transition duration-200"
+            >Erland</a
+          >
+          <a href="" class="block text-sm font-medium transition duration-200"
+            >Christer</a
+          >
+          <a href="" class="block text-sm font-medium transition duration-200"
+            >Julestemning!</a
+          >
+        </nav>
       </div>
     </header>
+    <!-- Navigation for Mobile-->
+
+    <!--Listings homepage-->
     <section
       id="listings"
       class="bg-gray-200 flex justify-center items-center flex-wrap gap-6 p-8"
     ></section>
     <footer
-      class="flex h-16 bg-opacity-85 bg-gray-400 justify-center sticky bottom-0 border-t-2 border-gray-500"
+      class="flex bg-opacity-85 bg-gray-400 justify-center sticky bottom-0 border-t-2 border-gray-500"
     >
-      <div class="flex items-center">
-        <a href="/index.html" class="p-0 mx-5 border border-1 border-red-500">
+      <div class="flex space-x-16 items-center">
+        <a href="/index.html" class="p-1">
           <svg
             class="w-14"
             viewBox="0 0 24 24"
@@ -42,10 +91,7 @@
             />
           </svg>
         </a>
-        <a
-          href="/html/listings/createListing.html"
-          class="p-0 mx-8 border border-1 border-red-500"
-        >
+        <a href="/html/listings/createListing.html" class="p-1">
           <svg
             class="w-14"
             viewBox="0 0 24 24"
@@ -61,10 +107,7 @@
             />
           </svg>
         </a>
-        <a
-          href="/html/profile/userProfile.html"
-          class="p-0 mx-5 border border-1 border-red-500"
-        >
+        <a href="/html/profile/userProfile.html" class="p-1">
           <svg
             class="w-14"
             viewBox="0 0 24 24"
