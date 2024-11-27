@@ -5,67 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script type="module" src="/src/js/views/home.js"></script>
+    <script
+      src="https://kit.fontawesome.com/7c44b2e8ec.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="/src/css/output.css" />
   </head>
   <body class="min-h-screen">
-    <header class="block bg-gray-400 p-4 shadow-xl">
-      <!-- Desktop Navigation -->
-      <div class="flex items-center justify-between">
-        <div class="space-x-2">
-          <img
-            class="w-16 hover:scale-110 transition duration-200"
-            src="/src/media/auctionBear_cropped_no_bg.png"
-            alt="Auction Bear"
-          />
-        </div>
-        <!-- Navigation Links -->
-        <nav class="flex space-x-6">
-          <a
-            href="/html/profile/userProfile.html"
-            class="hover:text-yellow-400 transition duration-200"
-            >Profile</a
-          >
-          <a
-            href="/html/auth/login.html"
-            class="hover:text-yellow-400 transition duration-200"
-            >Login</a
-          >
-          <a
-            href="/html/auth/register.html"
-            class="hover:text-yellow-400 transition duration-200"
-            >Register</a
-          >
-        </nav>
-        <!-- Logout Button -->
-        <div>
-          <button
-            id="logout-btn"
-            class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded transition duration-200"
-          >
-            Logout
-          </button>
-        </div>
-      </div>
-      <!-- Mobile Navigation -->
-      <div class="mt-4 text-white rounded-md shadow-lg">
-        <nav class="flex flex-col space-y-4 p-4">
-          <a href="" class="block text-sm font-medium transition duration-200"
-            >Petrine</a
-          >
-          <a href="" class="block text-sm font-medium transition duration-200"
-            >Erland</a
-          >
-          <a href="" class="block text-sm font-medium transition duration-200"
-            >Christer</a
-          >
-          <a href="" class="block text-sm font-medium transition duration-200"
-            >Julestemning!</a
-          >
-        </nav>
-      </div>
-    </header>
-    <!-- Navigation for Mobile-->
-
+    <nav-bar></nav-bar>
     <!--Listings homepage-->
     <section
       id="listings"

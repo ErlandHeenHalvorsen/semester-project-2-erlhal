@@ -1,9 +1,8 @@
 import { getListings } from "../api/listings/getListings.js";
 import { getHighestBid } from "../utils/getBids.js";
-import FooterBar from "../components/header.js";
-import { logout } from "../utils/logout.js";
+import NavBar from "../components/header.js";
 
-customElements.define("footer-bar", FooterBar);
+customElements.define("nav-bar", NavBar);
 
 async function renderListings() {
   const listings = await getListings(26, 1);
@@ -52,5 +51,6 @@ async function renderListings() {
   listingsContainer.innerHTML = html;
 }
 renderListings();
-const logoutBtn = document.querySelector("#logout-btn");
+/* const logoutBtn = document.querySelector("#logout-btn");
 logoutBtn.addEventListener("click", logout);
+dropDown(); */
