@@ -1,4 +1,7 @@
 import { getRegisterUser } from "../../api/auth/register.js";
+import NavBar from "../../components/header.js";
+
+customElements.define("nav-bar", NavBar);
 
 const submitBtn = document.querySelector("#register-btn");
 

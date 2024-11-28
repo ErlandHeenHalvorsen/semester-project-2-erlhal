@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/*header*/
+.header-custom {
+  @apply flex items-center justify-between bg-gray-300 p-4 shadow-xl;
+}
+.desk-nav-custom {
+  @apply  hidden md:flex items-center space-x-2;
+}

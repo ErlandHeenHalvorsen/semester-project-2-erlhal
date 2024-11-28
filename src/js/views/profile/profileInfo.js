@@ -2,6 +2,9 @@ import { getProfile } from "../../api/profile/getProfile.js";
 import { getProfileListings } from "../../api/profile/profileListings.js";
 import { getHighestBid } from "../../utils/getBids.js";
 import { authGuard } from "../../utils/authGuard.js";
+import NavBar from "../../components/header.js";
+
+customElements.define("nav-bar", NavBar);
 
 authGuard();
 
@@ -12,10 +15,10 @@ document.addEventListener("DOMContentLoaded", function () {
     profile = profile.data;
     // console.log(profile);
     let html = `
-    <div class="">
-        <div class="flex bg-gray-400 items-center justify-between">
+      <div class="bg-gray-400">
+        <div class="flex items-center justify-between">
           <img
-            class="ml-1 w-16 h-16 object-cover rounded-full border-2 border-gray-500 shadow-md"
+            class="ml-8  w-16 h-16 object-cover rounded-full border-2 border-gray-500 shadow-md"
             src="${profile.avatar.url}"
             alt="placeholder"
           />

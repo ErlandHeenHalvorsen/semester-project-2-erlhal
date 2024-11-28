@@ -1,5 +1,8 @@
 import { newPost } from "../../api/listings/createListing.js";
 import { authGuard } from "../../utils/authGuard.js";
+import NavBar from "../../components/header.js";
+
+customElements.define("nav-bar", NavBar);
 
 authGuard();
 

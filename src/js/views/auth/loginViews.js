@@ -1,5 +1,8 @@
 import { getLogin } from "../../api/auth/login.js";
 import { setUsername } from "../../utils/storage.js";
+import NavBar from "../../components/header.js";
+
+customElements.define("nav-bar", NavBar);
 const loginBtn = document.querySelector("#login-btn");
 
 loginBtn.addEventListener("click", async (e) => {

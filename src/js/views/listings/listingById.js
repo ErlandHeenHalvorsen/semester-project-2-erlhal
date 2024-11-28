@@ -1,6 +1,9 @@
 import { getListingFromId } from "../../api/listings/getListings.js";
 import { bidOnListing } from "../../api/listings/bidListing.js";
 import { getCredits } from "../../api/profile/getCredits.js";
+import NavBar from "../../components/header.js";
+
+customElements.define("nav-bar", NavBar);
 
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
