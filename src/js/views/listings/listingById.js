@@ -12,6 +12,21 @@ async function renderListingFromId() {
   const listingSection = document.querySelector("#listing-from-id");
   const listing = await getListingFromId(id);
   console.log(listing);
+  // Generate Bids Table
+  let bidRows = "";
+  console.log(listing.bids.length);
+  if (listing.bids.length > 0) {
+    listing.bids.map((bidder) => {
+      bidRows += `
+        <tr>
+          <td class="border border-gray-200 px-2 py-2">${bidder.bidder.name}</td>
+          <td class="border border-gray-200 px-2 py-2">${bidder.amount}</td>
+          <td class="border border-gray-200 px-2 py-2">${bidder.created}</td>
+        </tr>
+      `;
+    });
+  }
+
   let html = `
     <div class="flex flex-col p-6 mx-4 my-6 border border-1 border-gray-200 rounded-lg shadow-md">
         <!-- Listing Image -->
@@ -67,21 +82,7 @@ async function renderListingFromId() {
               </tr>
             </thead>
              <tbody>
-              <tr>
-                <td class="border border-gray-200 px-2 py-2">${
-                  listing.bids?.length > 0 ? listing.bids[0].bidder.name : ""
-                }</td>
-                <td class="border border-gray-200 px-2 py-2">${
-                  listing.bids?.length > 0 ? listing.bids[0].amount : ""
-                }</td>
-                <td class="border border-gray-200 px-2 py-2">
-                  ${
-                    listing.bids?.length > 0
-                      ? listing.bids[0].created || ""
-                      : ""
-                  }
-                </td>
-              </tr>
+              ${bidRows}
             </tbody> 
           </table>
         </div>
