@@ -1,5 +1,4 @@
 import { logout } from "../utils/logout.js";
-import { dropDown } from "../utils/dropDown.js";
 
 export default class NavBar extends HTMLElement {
   constructor() {
@@ -11,7 +10,7 @@ export default class NavBar extends HTMLElement {
     this.listeners();
   }
   listeners() {
-    const toggleMenu = this.querySelector("#mobile-dropdown-bars");
+    //const toggleMenu = this.querySelector("#mobile-dropdown-bars");
     const mobileMenu = this.querySelector("#navigation-mobile");
     const barIcon = this.querySelector("#bar-icon");
 
@@ -19,7 +18,11 @@ export default class NavBar extends HTMLElement {
       if (e.target.id === "logout-btn") {
         logout();
         window.location.reload();
-      } else if (e.target.id === "mobile-dropdown-bars") {
+      }
+    });
+    this.addEventListener("click", (e) => {
+      if (e.target.id === "bar-icon") {
+        // console.log("clicked");
         mobileMenu.classList.toggle("hidden");
         barIcon.classList.toggle("rotate-90");
       }
