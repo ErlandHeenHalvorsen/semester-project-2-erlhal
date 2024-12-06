@@ -4,8 +4,15 @@
 
 /*header*/
 .header-custom {
-  @apply flex items-center justify-between bg-gray-300 p-4 shadow-xl;
+  @apply flex items-center justify-between bg-secondary border-2 border-b-accent border-opacity-40  p-4 shadow-xl;
 }
 .desk-nav-custom {
-  @apply  hidden md:flex items-center space-x-2;
+  @apply hidden md:flex items-center space-x-2;
+}
+
+.cta-custom {
+  @apply bg-cta hover:bg-red-600 text-white px-4 py-2 rounded transition duration-200;
+}
+.input-custom {
+  @apply w-full mt-1 px-4 py-2 border border-accent rounded-lg shadow-sm outline-none;
 }

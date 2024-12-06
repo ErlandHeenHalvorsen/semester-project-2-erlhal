@@ -30,7 +30,7 @@ export default class NavBar extends HTMLElement {
   }
   render() {
     this.innerHTML = `
-      <header class="">
+      <header>
         <div class="header-custom">
           <div class="items-center space-x-2">
             <img
@@ -64,7 +64,7 @@ export default class NavBar extends HTMLElement {
         <div class="hidden md:flex">
           <button
             id="logout-btn"
-            class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded transition duration-200"
+            class="cta-custom"
             >
             Logout
           </button>
@@ -83,7 +83,7 @@ export default class NavBar extends HTMLElement {
         <!-- Navigation for Mobile-->
         <div
           id="navigation-mobile"
-          class="hidden md:hidden p-4 bg-gray-400 border-b border-gray-300"
+          class="hidden md:hidden p-4 bg-secondary border-b border-accent"
         >
           <nav class="flex flex-col text-center space-y-4">
             <a
@@ -113,7 +113,7 @@ export default class NavBar extends HTMLElement {
           </nav>
           <button
             id="logout-btn"
-            class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded transition duration-200"
+            class="cta-custom"
             >
             Logout
           </button>

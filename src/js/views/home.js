@@ -1,12 +1,11 @@
 import { getListings } from "../api/listings/getListings.js";
 import { getHighestBid } from "../utils/getBids.js";
 import NavBar from "../components/header.js";
-import { updateProfile } from "../api/profile/updateProfile.js";
 
 customElements.define("nav-bar", NavBar);
 
 async function renderListings() {
-  const listings = await getListings(26, 1);
+  const listings = await getListings(20, 1);
 
   console.log(listings);
 
@@ -22,7 +21,7 @@ async function renderListings() {
 
     //console.log(listing);
     html += `
-    <a class="shadow-sm hover:shadow-md transition-all ease-in-out duration-150" href="/html/listings/singleListing.html?id=${
+    <a class="border-2 border-accent border-opacity-40 rounded-lg shadow-sm hover:shadow-md transition-all ease-in-out duration-150" href="/html/listings/singleListing.html?id=${
       listing.id
     }">
         <div
@@ -36,12 +35,12 @@ async function renderListings() {
             : `<img class="w-full h-full object-cover" src="/src/media/Komplett_wallpaper_2022_3rdplace_preciousillusion_dark.jpg" alt="Random image" />`
         } 
           <p
-            class="absolute bottom-4 left-4 text-white bg-black bg-opacity-50 p-2 rounded-md"
+            class="absolute bottom-4 left-4 font-bold text-black bg-primary bg-opacity-40 p-2 rounded-md"
           >
             ${highestBid}
           </p>
         </div>
-        <div class="max-w-[300px] py-2 px-1 bg-white hover:bg-gray-100 rounded-b-md text-center transition-all">
+        <div class="max-w-[300px] py-2 px-1 bg-secondary rounded-b-md text-center transition-all">
           <span>${listing.tags}</span>
           <h2 class="font-bold text-xl truncate">${listing.title}</h2>
           <p>${listing.endsAt}</p>

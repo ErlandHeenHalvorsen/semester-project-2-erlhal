@@ -16,14 +16,14 @@ document.addEventListener("DOMContentLoaded", function () {
     profile = profile.data;
     // console.log(profile);
     let html = `
-      <div class="bg-gray-400">
+      <div class="bg-ctaPositive text-white">
         <div class="flex items-center justify-between">
           <img
-            class="ml-8  w-16 h-16 object-cover rounded-full border-2 border-gray-500 shadow-md"
+            class="ml-8  w-16 h-16 object-cover rounded-full border-2 border-accent shadow-md"
             src="${profile.avatar.url}"
             alt="placeholder"
           />
-          <div class="mr-1">
+          <div class="mr-1 text-cta">
             <h2 class="font-bold first-letter:capitalize">${profile.name}</h2>
             <p>Coins: ${profile.credits}</p>
           </div>
@@ -47,15 +47,16 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log(listings.map((listing) => listing));
 
     let html = "";
-    html += listings.map((listing) => {
-      let highestBid = "No bids yet";
-      if (listing.bids.length > 0) {
-        highestBid = getHighestBid(listing.bids);
-      }
-      return `
+    html += listings
+      .map((listing) => {
+        let highestBid = "No bids yet";
+        if (listing.bids.length > 0) {
+          highestBid = getHighestBid(listing.bids);
+        }
+        return `
     <a href="/html/listings/singleListing.html?id=${listing.id}">
         <div
-          class="w-[300px] h-[200px] bg-white flex flex-col justify-between rounded-t-md overflow-hidden shadow-sm relative"
+          class="w-[300px] h-[200px] flex flex-col justify-between rounded-t-md overflow-hidden shadow-sm relative"
         >
         ${
           listing.media && listing.media[0]
@@ -65,19 +66,20 @@ document.addEventListener("DOMContentLoaded", function () {
             : `<img class="w-full h-full object-cover" src="/src/media/Komplett_wallpaper_2022_3rdplace_preciousillusion_dark.jpg" alt="Random image" />`
         } 
           <p
-            class="absolute bottom-4 left-4 text-white bg-black bg-opacity-50 p-2 rounded-md"
+            class="absolute bottom-4 left-4 font-bold text-black bg-primary bg-opacity-50 p-2 rounded-md"
           >
             ${highestBid}
           </p>
         </div>
-        <div class="py-2 bg-white rounded-b-md text-center">
+        <div class="py-2 bg-secondary rounded-b-md text-center shadow-sm hover:shadow-md transition-all">
           <span>${listing.tags}</span>
           <h2 class="font-bold text-xl">${listing.title}</h2>
           <p>${listing.endsAt}</p>
         </div>
       </a>
-    `;
-    });
+`;
+      })
+      .join("");
     listingSection.innerHTML = html;
   }
   renderProfileListings();

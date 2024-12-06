@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="/src/css/output.css" />
     <!--<script src="https://cdn.tailwindcss.com"></script>-->
   </head>
-  <body class="">
+  <body class="bg-primary">
     <nav-bar></nav-bar>
-    <section id="userInfo" class=""></section>
+    <section id="userInfo"></section>
     <hr />
     <section id="update-profile-section">
       <button
@@ -25,7 +25,7 @@
       </button>
       <div
         id="hidden-form"
-        class="hidden p-4 m-4 rounded-md shadow-md bg-gray-400"
+        class="hidden p-4 m-4 rounded-md shadow-md bg-secondary border-2 border-accent"
       >
         <form id="updateForm" class="space-y-2">
           <div>
@@ -36,7 +36,7 @@
               id="update-avatar"
               type="url"
               name="avatar"
-              class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm outline-none"
+              class="input-custom"
               placeholder="Enter avatar url"
             />
           </div>
@@ -81,7 +81,7 @@
     </section>
     <section
       id="userListings"
-      class="bg-gray-100 flex my-4 justify-center items-center flex-wrap gap-6 p-8"
+      class="bg-primary flex my-4 justify-center items-center flex-wrap gap-6 p-8"
     ></section>
   </body>
 </html>
