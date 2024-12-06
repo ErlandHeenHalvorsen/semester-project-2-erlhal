@@ -27,12 +27,13 @@
         id="hidden-form"
         class="hidden p-4 m-4 rounded-md shadow-md bg-gray-400"
       >
-        <form class="space-y-2">
+        <form id="updateForm" class="space-y-2">
           <div>
             <label for="avatar" class="block text-sm font-medium text-gray-700"
               >Update Avatar</label
             >
             <input
+              id="update-avatar"
               type="url"
               name="avatar"
               class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm outline-none"
@@ -55,6 +56,7 @@
           </div>
           <div class="flex flex-wrap justify-between items-center w-full">
             <button
+              id="update-button"
               type="submit"
               class="bg-blue-500 text-white px-4 py-2 rounded-lg shadow"
             >

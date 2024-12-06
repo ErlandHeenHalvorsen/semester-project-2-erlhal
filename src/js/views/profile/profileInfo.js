@@ -3,6 +3,7 @@ import { getProfileListings } from "../../api/profile/profileListings.js";
 import { getHighestBid } from "../../utils/getBids.js";
 import { authGuard } from "../../utils/authGuard.js";
 import NavBar from "../../components/header.js";
+import { updateProfile } from "../../api/profile/updateProfile.js";
 
 customElements.define("nav-bar", NavBar);
 
@@ -93,5 +94,38 @@ document.addEventListener("DOMContentLoaded", function () {
         toggleEditProfile.classList.remove("hidden");
       });
     }
+  });
+});
+
+async function updateProfileInfo() {
+  const avatarUrl = document.querySelector("#update-avatar")?.value || "";
+  const bio = document.querySelector("#update-description")?.value;
+
+  // Konstruer oppdateringsobjektet riktig
+  const update = {
+    avatar: avatarUrl ? { url: avatarUrl, alt: "" } : null,
+    bio,
+    //banner: { url: "", alt: "" || null },
+  };
+  console.log("Update payload:", update); // Legg til denne for debugging
+  try {
+    const updateProfileResponse = await updateProfile(update);
+    console.log("API Response:", updateProfileResponse);
+    if (!updateProfileResponse) {
+      throw new Error("Failed to update profile, please check img url");
+    }
+    alert("Profile updated successfully!");
+    location.reload();
+  } catch (error) {
+    console.error("Failed to update profile:", error.message);
+    alert(`Error updating profile: ${error.message}`);
+  }
+}
+//updateProfileInfo();
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.forms.updateForm;
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    updateProfileInfo();
   });
 });

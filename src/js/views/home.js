@@ -1,6 +1,7 @@
 import { getListings } from "../api/listings/getListings.js";
 import { getHighestBid } from "../utils/getBids.js";
 import NavBar from "../components/header.js";
+import { updateProfile } from "../api/profile/updateProfile.js";
 
 customElements.define("nav-bar", NavBar);
 
@@ -40,9 +41,9 @@ async function renderListings() {
             ${highestBid}
           </p>
         </div>
-        <div class="py-2 bg-white hover:bg-gray-100 rounded-b-md text-center transition-all">
+        <div class="max-w-[300px] py-2 px-1 bg-white hover:bg-gray-100 rounded-b-md text-center transition-all">
           <span>${listing.tags}</span>
-          <h2 class="font-bold text-xl">${listing.title}</h2>
+          <h2 class="font-bold text-xl truncate">${listing.title}</h2>
           <p>${listing.endsAt}</p>
         </div>
       </a>

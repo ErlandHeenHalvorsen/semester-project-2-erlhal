@@ -87,30 +87,36 @@ export default class NavBar extends HTMLElement {
         >
           <nav class="flex flex-col text-center space-y-4">
             <a
-            href=""
+            href="/index.html"
             class="text-lg font-semibold text-gray-800 transition duration-200"
             >
-              Erland
+              Home
             </a>
             <a
-            href=""
+            href="/html/profile/userProfile.html"
             class="text-lg font-semibold text-gray-800 transition duration-200"
             >
-              Petrine
+              Profile
             </a>
             <a
-            href=""
+            href="/html/auth/login.html"
             class="text-lg font-semibold text-gray-800 transition duration-200"
             >
-              Christer
+              Login
             </a>
             <a
-            href=""
+            href="/html/auth/register.html"
             class="text-lg font-semibold text-gray-800 transition duration-200"
             >
-              Juleglede
+              Register
             </a>
           </nav>
+          <button
+            id="logout-btn"
+            class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded transition duration-200"
+            >
+            Logout
+          </button>
         </div>
       </header>
     `;
