@@ -11,38 +11,31 @@
     ></script>
     <link rel="stylesheet" href="/src/css/output.css" />
   </head>
-  <body class="min-h-screen">
+  <body class="min-h-screen flex flex-col">
     <nav-bar></nav-bar>
     <!-- Search Bar -->
-    <section>
-      <div>
-        <div class="bg-primary flex justify-center items-center p-8">
-          <div class="flex flex-col gap-4">
-            <h1 class="text-3xl text-center text-cta">
-              Lets Find Something Useless!
-            </h1>
-            <div class="flex flex-col gap-4">
-              <input
-                type="text"
-                id="search"
-                class="p-2 w-96 rounded-md"
-                placeholder="Search for a home"
-              />
-              <button
-                id="searchButton"
-                class="bg-accent text-white p-2 rounded-md"
-              >
-                Search
-              </button>
-            </div>
-          </div>
+    <section class="flex justify-center items-center bg-primary">
+      <div class="flex flex-col mx-6 p-4 space-y-4">
+        <h1 class="text-3xl text-center text-cta">
+          Lets Find Something Useless!
+        </h1>
+        <div class="flex flex-col gap-4">
+          <input
+            type="text"
+            id="search"
+            class="p-2 rounded-md"
+            placeholder="Search for a home"
+          />
+          <button id="searchButton" class="bg-accent text-white p-2 rounded-md">
+            Search
+          </button>
         </div>
       </div>
     </section>
-    <!--Listings homepage-->
+    <!-- Listings homepage -->
     <section
       id="listings"
-      class="bg-primary flex justify-center items-center flex-wrap gap-6 p-8"
+      class="flex-1 flex justify-center items-center flex-wrap gap-6 p-8 bg-primary"
     ></section>
     <footer
       class="md:hidden flex bg-opacity-85 bg-secondary sticky bottom-0 border-t-2 border-opacity-40 border-accent w-full"
@@ -59,6 +52,5 @@
         </a>
       </div>
     </footer>
-    <!-- <footer-bar></footer-bar> -->
   </body>
 </html>
