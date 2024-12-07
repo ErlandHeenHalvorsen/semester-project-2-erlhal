@@ -2,8 +2,10 @@ import { getListingFromId } from "../../api/listings/getListings.js";
 import { bidOnListing } from "../../api/listings/bidListing.js";
 import { getCredits } from "../../api/profile/getCredits.js";
 import NavBar from "../../components/header.js";
+import Carousell from "../../components/carousell.js";
 
 customElements.define("nav-bar", NavBar);
+customElements.define("image-carousel", Carousell);
 
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
@@ -12,9 +14,9 @@ async function renderListingFromId() {
   const listingSection = document.querySelector("#listing-from-id");
   const listing = await getListingFromId(id);
   console.log(listing);
+
   // Generate Bids Table
   let bidRows = "";
-  console.log(listing.bids.length);
   if (listing.bids.length > 0) {
     listing.bids.map((bidder) => {
       bidRows += `
@@ -29,30 +31,16 @@ async function renderListingFromId() {
 
   let html = `
     <div class="flex flex-col p-6 mx-4 my-6 border border-1 border-gray-200 rounded-lg shadow-md">
-        <!-- Listing Image -->
-        <div class="mb-6">
-          <img
-            src="${
-              listing.media[0].url
-                ? listing.media[0].url
-                : "/src/media/Komplett_wallpaper_2022_3rdplace_preciousillusion_dark.jpg"
-            }"
-            alt="Product Image"
-            class="w-full h-64 object-cover rounded-md"
-          />
-        </div>
+        <!-- Image Carousel -->
+        <image-carousel listing-id="${id}"></image-carousel>
 
         <!-- Product Details -->
         <div class="mb-6">
-          <h1 class="text-2xl font-bold text-gray-800 mb-2">${
-            listing.title
-          }</h1>
+          <h1 class="text-2xl font-bold text-gray-800 mb-2">${listing.title}</h1>
           <p class="text-gray-600 mb-4">
             ${listing.description}
           </p>
-          <p class="mb-4 first-letter:capitalize">Seller: ${
-            listing.seller.name
-          }</p>
+          <p class="mb-4 first-letter:capitalize">Seller: ${listing.seller.name}</p>
           <p class="text-gray-700">
             <strong>Ends At:</strong> ${listing.endsAt}
           </p>
@@ -90,6 +78,7 @@ async function renderListingFromId() {
   `;
 
   listingSection.innerHTML = html;
+
   document.querySelector("#bid-form").addEventListener("submit", async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -106,4 +95,5 @@ async function renderListingFromId() {
     await bidOnListing(id, Number(bidAmount));
   });
 }
+
 renderListingFromId();

@@ -33,12 +33,14 @@ export default class NavBar extends HTMLElement {
       <header>
         <div class="header-custom">
           <div class="items-center space-x-2">
+          <a href="/index.html">
             <img
               class="w-24 hover:scale-110 transition duration-200"
               src="/src/media/auctionBear_cropped_no_bg.png"
               alt="Auction Bear"
             />
-        </div>
+          </a>
+          </div>
         <!-- Desktop Navigation -->
         <div class="desk-nav-custom">
           <!-- Navigation Links -->

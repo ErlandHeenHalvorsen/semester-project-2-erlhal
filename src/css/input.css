@@ -16,3 +16,9 @@
 .input-custom {
   @apply w-full mt-1 px-4 py-2 border border-accent rounded-lg shadow-sm outline-none;
 }
+.carousell-buttons-next {
+  @apply absolute top-1/2 right-2 transform -translate-y-1/2 bg-gray-600 bg-opacity-60 text-white px-3 py-1 rounded-md;
+}
+.carousell-button-prev {
+  @apply absolute top-1/2 left-2 transform -translate-y-1/2 bg-gray-600 bg-opacity-60 text-white px-3 py-1 rounded-md;
+}
