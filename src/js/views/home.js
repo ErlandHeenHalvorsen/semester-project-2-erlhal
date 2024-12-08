@@ -2,10 +2,10 @@ import { getListings } from "../api/listings/getListings.js";
 import { getHighestBid } from "../utils/getBids.js";
 import { searchListings } from "../api/listings/searchListings.js";
 import NavBar from "../components/header.js";
+import FooterNav from "../components/footerNav.js";
 
+customElements.define("footer-nav", FooterNav);
 customElements.define("nav-bar", NavBar);
-
-search();
 
 async function renderListings(listings) {
   const listingsContainer = document.querySelector("#listings");
@@ -16,7 +16,7 @@ async function renderListings(listings) {
   } else {
     listings.map((listing) => {
       let highestBid = "No bids yet";
-      if (listing.bids > 0) {
+      if (Array.isArray(listing.bids) && listing.bids.length > 0) {
         highestBid = getHighestBid(listing.bids);
       }
 
@@ -34,7 +34,7 @@ async function renderListings(listings) {
                 }" alt="${listing.media.alt ? listing.media.alt : ""}" />`
               : `<img class="w-full h-full object-cover" src="/src/media/Komplett_wallpaper_2022_3rdplace_preciousillusion_dark.jpg" alt="Random image" />`
           } 
-            <p
+            <p 
               class="absolute bottom-4 left-4 font-bold text-black bg-primary bg-opacity-40 p-2 rounded-md"
             >
               ${highestBid}
@@ -68,6 +68,7 @@ async function search() {
       console.log("Searching for:", query);
       const searchResults = await searchListings(query); // Søk med API
       renderListings(searchResults); // Vis søkeresultater
+      console.log(searchResults);
     } else {
       console.log("Please enter a search term.");
       loadDefaultListings(); // Hvis søkefeltet er tomt, last standardlistinger
