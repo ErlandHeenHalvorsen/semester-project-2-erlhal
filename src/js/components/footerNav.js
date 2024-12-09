@@ -1,3 +1,4 @@
+import { getToken } from "../utils/storage.js";
 export default class FooterNav extends HTMLElement {
   constructor() {
     super();
@@ -7,6 +8,14 @@ export default class FooterNav extends HTMLElement {
     this.render();
   }
   render() {
+    const token = getToken();
+    const profileLink = token
+      ? "/html/profile/userProfile.html"
+      : "/html/auth/login.html";
+    const createListingLink = token
+      ? "/html/listings/createListing.html"
+      : "/html/auth/login.html";
+
     this.innerHTML = `
     <footer
       class="md:hidden flex bg-opacity-85 bg-secondary  border-t-2 border-opacity-40 border-accent w-full"
@@ -15,10 +24,10 @@ export default class FooterNav extends HTMLElement {
         <a href="/index.html" class="p-2">
           <i class="fa-solid fa-house fa-2xl"></i>
         </a>
-        <a href="/html/listings/createListing.html" class="p-2">
+        <a href="${createListingLink}" class="p-2">
           <i class="fa-solid fa-circle-plus fa-2xl"></i>
         </a>
-        <a href="/html/profile/userProfile.html" class="p-2">
+        <a href="${profileLink}" class="p-2">
           <i class="fa-solid fa-user-tie fa-2xl"></i>
         </a>
       </div>
