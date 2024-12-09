@@ -9,7 +9,7 @@ export default class FooterNav extends HTMLElement {
   render() {
     this.innerHTML = `
     <footer
-      class="md:hidden flex bg-opacity-85 bg-secondary sticky bottom-0 border-t-2 border-opacity-40 border-accent w-full"
+      class="md:hidden flex bg-opacity-85 bg-secondary  border-t-2 border-opacity-40 border-accent w-full"
     >
       <div class="flex mx-8 p-2 justify-between items-center w-full gap-x-4">
         <a href="/index.html" class="p-2">

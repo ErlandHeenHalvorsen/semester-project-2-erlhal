@@ -4,18 +4,32 @@ import { getHeaders } from "../../utils/headers.js";
 
 export async function getCredits() {
   const username = getUsername();
+  // console.log("Username:", username); // Logger brukernavnet
+
   try {
-    let response = await fetch(`${API_GET_PROFILE}/${username}/credits`, {
+    const url = `${API_GET_PROFILE}/${username}/credits`;
+    // console.log("Fetching credits from URL:", url);
+
+    let response = await fetch(url, {
       method: "GET",
       headers: getHeaders(),
     });
+
+    // console.log("Raw response:", response);
+
     if (!response.ok) {
-      throw new Error(response.message);
+      const errorDetails = await response.json();
+      console.error("Error fetching credits:", errorDetails);
+      throw new Error(
+        errorDetails.message ||
+          `Failed to fetch credits: ${response.statusText}`
+      );
     }
-    response = await response.json();
-    let res = response.data;
-    return res;
+
+    const data = await response.json();
+    // console.log("Credits Data:", data);
+    return data.data.credits; // Returner kun verdien av credits
   } catch (error) {
-    console.error(error);
+    console.error("Error in getCredits:", error);
   }
 }

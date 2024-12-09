@@ -1,8 +1,66 @@
 {
-  "data": {
-    "name": "API Key",
-    "status": "ACTIVE",
-    "key": "5374c292-0340-4886-8ab1-a4be580b69c6"
+  "api-key": {
+    "data": {
+      "name": "API Key",
+      "status": "ACTIVE",
+      "key": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+    },
+    "meta": {}
   },
-  "meta": {}
+
+  "api-listings": {
+    "data": {
+      "id": "string",
+      "title": "string",
+      "description": "string",
+      "tags": ["string"],
+      "media": [
+        {
+          "url": "https://url.com/image.jpg",
+          "alt": "string"
+        }
+      ],
+      "created": "2020-01-01T00:00:00.000Z",
+      "updated": "2020-01-01T00:00:00.000Z",
+      "endsAt": "2020-01-01T00:00:00.000Z",
+      "seller": {
+        "name": "string",
+        "email": "user@example.com",
+        "bio": "string",
+        "avatar": {
+          "url": "https://url.com/image.jpg",
+          "alt": "string"
+        },
+        "banner": {
+          "url": "https://url.com/image.jpg",
+          "alt": "string"
+        },
+        "wins": ["string"]
+      },
+      "bids": [
+        {
+          "id": "string",
+          "amount": 0,
+          "bidder": {
+            "name": "string",
+            "email": "user@example.com",
+            "bio": "string",
+            "avatar": {
+              "url": "https://url.com/image.jpg",
+              "alt": "string"
+            },
+            "banner": {
+              "url": "https://url.com/image.jpg",
+              "alt": "string"
+            }
+          },
+          "created": "2020-01-01T00:00:00.000Z"
+        }
+      ],
+      "_count": {
+        "bids": 0
+      }
+    },
+    "meta": {}
+  }
 }

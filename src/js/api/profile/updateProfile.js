@@ -5,7 +5,7 @@ import { getHeaders } from "../../utils/headers.js";
 export async function updateProfile(update) {
   const username = getUsername();
   try {
-    console.log("Payload before sending:", JSON.stringify(update)); // Debug her
+    // console.log("Payload before sending:", JSON.stringify(update)); // Debug her
     let response = await fetch(`${API_GET_PROFILE}/${username}`, {
       method: "PUT",
       headers: getHeaders(),

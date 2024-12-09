@@ -4,7 +4,9 @@ import { getHighestBid } from "../../utils/getBids.js";
 import { authGuard } from "../../utils/authGuard.js";
 import NavBar from "../../components/header.js";
 import { updateProfile } from "../../api/profile/updateProfile.js";
+import FooterNav from "../../components/footerNav.js";
 
+customElements.define("footer-nav", FooterNav);
 customElements.define("nav-bar", NavBar);
 
 authGuard();

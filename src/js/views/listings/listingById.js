@@ -82,17 +82,28 @@ async function renderListingFromId() {
   document.querySelector("#bid-form").addEventListener("submit", async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-    let bidAmount = formData.get("bid-amount");
-    let credits = getCredits();
-    if (!bidAmount) {
-      alert("Please enter a bid amount");
-      return;
+    const bidAmount = Number(formData.get("bid-amount"));
+    // console.log(`Bid Amount Entered: ${bidAmount}`);
+
+    try {
+      const credits = await getCredits();
+      // console.log(`Fetched Credits: ${credits}`);
+
+      if (!credits || isNaN(credits)) {
+        alert("Unable to fetch your credits. Please try again later.");
+        return;
+      }
+
+      const result = await bidOnListing(id, bidAmount);
+      console.log("Bid result:", result);
+      alert("Bid placed successfully!");
+      window.location.reload();
+    } catch (error) {
+      console.error("Error placing bid:", error);
+      alert(
+        `An error occurred while placing your bid. Please try again later: --${error.message}`
+      );
     }
-    if (bidAmount > credits) {
-      alert("You do not have enough credits to place this bid");
-      return;
-    }
-    await bidOnListing(id, Number(bidAmount));
   });
 }
 

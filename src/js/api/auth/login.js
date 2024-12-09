@@ -1,7 +1,6 @@
 import { API_AUTH_LOGIN } from "../../utils/constanst.js";
 import { getHeaders } from "../../utils/headers.js";
-import { setToken, setUsername } from "../../utils/storage.js";
-
+import { setToken } from "../../utils/storage.js";
 // import { setUserData } from "../utils/storage.js";
 
 export async function getLogin(email, password) {

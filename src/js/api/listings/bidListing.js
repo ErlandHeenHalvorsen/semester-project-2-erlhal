@@ -6,21 +6,20 @@ export async function bidOnListing(id, amount) {
     let response = await fetch(`${API_AUCTION_BASE}/${id}/bids`, {
       method: "POST",
       headers: getHeaders(),
-      body: JSON.stringify({
-        amount: amount,
-      }),
+      body: JSON.stringify({ amount }),
     });
 
     if (!response.ok) {
-      const errorDetails = await response.json(); // Parse the error response
-      console.error("API Error Details:", errorDetails);
-      throw new Error(`API Error: ${response.status} - ${response.statusText}`);
+      const errorDetails = await response.json();
+      throw new Error(
+        `API Error: ${errorDetails.message || response.statusText}`
+      );
     }
 
-    response = await response.json();
-    let res = response.data;
-    return res;
+    const data = await response.json();
+    return data; // Sørg for at du returnerer riktig felt fra responsen
   } catch (error) {
-    console.error(error);
+    console.error("Error in bidOnListing:", error);
+    throw error; // Kast alltid feilen videre
   }
 }
