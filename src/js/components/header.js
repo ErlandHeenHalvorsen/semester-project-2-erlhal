@@ -5,6 +5,7 @@ export default class NavBar extends HTMLElement {
   constructor() {
     super();
     this.classList.add("block");
+    this.isLoggedIn = getToken() ? true : false;
   }
 
   connectedCallback() {
@@ -28,6 +29,22 @@ export default class NavBar extends HTMLElement {
         barIcon.classList.toggle("rotate-90");
       }
     });
+  }
+  loggedInMenu() {
+    return `
+    <nav class="flex space-x-6">
+      <a href="/html/profile/userProfile.html" class="hover:underline transition duration-200">Profile</a>
+      <a href="/html/listings/createListing.html" class="hover:underline transition duration-200">Create Listing</a>
+    </nav>
+    `;
+  }
+  loggedOutMenu() {
+    return `
+    <nav class="flex space-x-6">
+      <a href="/html/auth/login.html" class="hover:underline transition-all duration-200">Login</a>
+      <a href="/html/auth/register.html" class="hover:underline transition-all duration-200">Register</a>
+    </nav>
+    `;
   }
 
   render() {
@@ -58,11 +75,7 @@ export default class NavBar extends HTMLElement {
           <!-- Desktop Navigation -->
           <div class="desk-nav-custom">
             <!-- Navigation Links -->
-            <nav class="flex space-x-6">
-              <a href="${profileLink}" class="hover:underline transition duration-200">Profile</a>
-              ${loginLink} <!-- Only show if no token -->
-              ${registerLink} <!-- Only show if no token -->
-            </nav>
+            ${this.isLoggedIn ? this.loggedInMenu() : this.loggedOutMenu()}
           </div>
           <!-- Logout Button (only shown if token exists) -->
           <div class="hidden md:flex">
