@@ -14,7 +14,8 @@ submitBtn.addEventListener("click", async (e) => {
     const newUser = await getRegisterUser({ name, email, password });
     if (newUser) {
       console.log("User registered successfully:", newUser);
-      //window.location.href = "/login";
+      alert("User registered successfully!");
+      window.location.href = "/html/auth/login.html";
     }
   } catch (error) {
     console.error(error);
