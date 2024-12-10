@@ -3,7 +3,9 @@ import { bidOnListing } from "../../api/listings/bidListing.js";
 import { getCredits } from "../../api/profile/getCredits.js";
 import NavBar from "../../components/header.js";
 import Carousell from "../../components/carousell.js";
+import FooterNav from "../../components/footerNav.js";
 
+customElements.define("footer-nav", FooterNav);
 customElements.define("nav-bar", NavBar);
 customElements.define("image-carousel", Carousell);
 

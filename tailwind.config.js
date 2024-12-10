@@ -8,7 +8,7 @@ export default {
         secondary: "#f2f2f2", // Light gray
         accent: "#cccccc",
         accent2: "#333", // Muted gray
-        cta: "#0D6EFD", // Blue
+        cta: "#B18461", // Blue
         ctaPositive: "#198754", // Green
         ctaNegative: "#DC3545", // Red
       },

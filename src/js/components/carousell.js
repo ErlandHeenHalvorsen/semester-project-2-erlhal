@@ -69,41 +69,34 @@ export default class Carousell extends HTMLElement {
 
     this.innerHTML = `
       <div class="relative mb-6">
-        <!-- Image Wrapper -->
-        <div class="overflow-hidden rounded-md">
-          <div
-            id="carousel"
-            class="flex transition-transform duration-500 ease-in-out"
-            style="transform: translateX(0);"
-          >
-            ${this.listing.media
-              .map(
-                (img, idx) =>
-                  `<img
-                    key="${idx}"
-                    src="${img.url}"
-                    alt="Product Image ${idx + 1}"
-                    class="w-full h-64 object-cover flex-none"
-                  />`
-              )
-              .join("")}
-          </div>
-        </div>
+  <!-- Image Wrapper -->
+  <div class="overflow-hidden rounded-md">
+    <div
+      id="carousel"
+      class="flex transition-transform duration-500 ease-in-out"
+    >
+      ${this.listing.media
+        .map(
+          (img, idx) =>
+            `<img
+              key="${idx}"
+              src="${img.url}"
+              alt="Product Image ${idx + 1}"
+              class="w-full  sm:h-80 lg:h-[500px] object-cover  flex-none"
+            />`
+        )
+        .join("")}
+    </div>
+  </div>
 
-        <!-- Navigation Buttons -->
-        <button
-          id="prev"
-          class="carousell-button-prev"
-        >
-          <i class="fa-solid fa-chevron-left md:fa-xl"></i>
-        </button>
-        <button
-          id="next"
-          class="carousell-buttons-next"
-        >
-          <i class="fa-solid fa-chevron-right md:fa-xl"></i>
-        </button>
-      </div>
+  <!-- Navigation Buttons -->
+  <button id="prev" class="carousell-button-prev">
+    <i class="fa-solid fa-chevron-left md:fa-xl"></i>
+  </button>
+  <button id="next" class="carousell-buttons-next">
+    <i class="fa-solid fa-chevron-right md:fa-xl"></i>
+  </button>
+</div>
     `;
   }
 }
