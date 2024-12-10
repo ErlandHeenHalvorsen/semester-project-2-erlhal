@@ -18,10 +18,10 @@
     <nav-bar></nav-bar>
     <main class="flex flex-1 items-center justify-center">
       <div
-        class="flex flex-col p-4 m-4 w-[700px] max-w-[700px] rounded-md shadow-md bg-gray-400"
+        class="flex flex-col p-4 m-4 w-[700px] max-w-[700px] rounded-md shadow-md bg-secondary"
       >
-        <h1 class="font-bold">Make Listing</h1>
-        <form name="createListing" id="createForm" class="space-y-4">
+        <h1 class="font-bold text-gray-700">Make Listing</h1>
+        <form name="createListing" id="createForm" class="space-y-2">
           <!-- Title -->
           <div>
             <label for="title" class="block text-sm font-medium text-gray-700"
@@ -31,7 +31,7 @@
               type="text"
               id="create-title"
               name="title"
-              class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm outline-none"
+              class="input-custom"
               placeholder="Enter title"
             />
           </div>
@@ -47,7 +47,7 @@
               id="create-description"
               name="description"
               rows="4"
-              class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm outline-none"
+              class="input-custom"
               placeholder="Enter description"
             ></textarea>
           </div>
@@ -61,7 +61,7 @@
               type="text"
               id="create-tags"
               name="tags"
-              class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm outline-none"
+              class="input-custom"
               placeholder="Enter tags (comma-separated)"
             />
           </div>
@@ -77,14 +77,14 @@
               type="url"
               id="create-image-url"
               name="image-url"
-              class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm outline-none"
+              class="input-custom"
               placeholder="Enter image URL"
             />
           </div>
           <button
             type="button"
             id="add-image-url"
-            class="mt-2 bg-green-500 text-white px-3 py-1 rounded-lg shadow"
+            class="mt-2 bg-ctaPositive text-white px-3 py-1 rounded-lg shadow"
           >
             Add Another Image
           </button>
@@ -98,12 +98,12 @@
               type="datetime-local"
               id="create-ends-at"
               name="ends-at"
-              class="w-full mt-1 px-4 py-2 border border-gray-300 rounded-lg shadow-sm outline-none"
+              class="input-custom"
             />
           </div>
 
           <!-- Submit Button -->
-          <div class="flex justify-end">
+          <div class="flex flex-wrap justify-between items-center w-full">
             <button
               id="create-btn"
               type="submit"
