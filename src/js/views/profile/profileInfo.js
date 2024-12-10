@@ -18,21 +18,21 @@ document.addEventListener("DOMContentLoaded", function () {
     profile = profile.data;
     // console.log(profile);
     let html = `
-      <div class="bg-ctaPositive text-white">
-        <div class="flex items-center justify-between">
+      <div class="bg-[#f5f5f5] text-[#333] rounded-lg shadow p-4">
+        <div class="flex items-center">
           <img
-            class="ml-8  w-16 h-16 object-cover rounded-full border-2 border-accent shadow-md"
+            class="w-12 h-12 object-cover rounded-full mr-4"
             src="${profile.avatar.url}"
-            alt="placeholder"
+            alt="User Avatar"
           />
-          <div class="mr-1 text-cta">
-            <h2 class="font-bold first-letter:capitalize">${profile.name}</h2>
-            <p>Coins: ${profile.credits}</p>
+            <div>
+              <h2 class="font-semibold text-lg">${profile.name}</h2>
+              <p class="text-sm">Coins: ${profile.credits}</p>
+            </div>
           </div>
-        </div>
-        <p class="p-2">
-          ${profile.bio ? profile.bio : "This user has no bio..."}
-        </p>
+          <p class="mt-4 text-sm">
+            ${profile.bio ? profile.bio : "This user has no bio..."}
+          </p>
       </div>
     `;
     infoSection.innerHTML = html;
@@ -56,29 +56,30 @@ document.addEventListener("DOMContentLoaded", function () {
           highestBid = getHighestBid(listing.bids);
         }
         return `
-    <a href="/html/listings/singleListing.html?id=${listing.id}">
-        <div
-          class="w-[300px] h-[200px] flex flex-col justify-between rounded-t-md overflow-hidden shadow-sm relative"
-        >
-        ${
-          listing.media && listing.media[0]
-            ? `<img class="w-full h-full object-cover" src="${
-                listing.media[0].url
-              }" alt="${listing.media.alt ? listing.media.alt : ""}" />`
-            : `<img class="w-full h-full object-cover" src="/src/media/Komplett_wallpaper_2022_3rdplace_preciousillusion_dark.jpg" alt="Random image" />`
-        } 
-          <p
-            class="absolute bottom-4 left-4 font-bold text-black bg-primary bg-opacity-50 p-2 rounded-md"
-          >
-            ${highestBid}
-          </p>
-        </div>
-        <div class="py-2 bg-secondary rounded-b-md text-center shadow-sm hover:shadow-md transition-all">
-          <span>${listing.tags}</span>
-          <h2 class="font-bold text-xl">${listing.title}</h2>
-          <p>${listing.endsAt}</p>
-        </div>
-      </a>
+    <a class="rounded-lg shadow-lg hover:shadow-xl transition-shadow ease-in-out duration-150" href="/html/listings/singleListing.html?id=${
+      listing.id
+    }">
+    <div
+      class="w-[300px] h-[200px] bg-white flex flex-col justify-between rounded-t-md overflow-hidden relative"
+    >
+      ${
+        listing.media && listing.media[0]
+          ? `<img class="w-full h-full object-cover" src="${
+              listing.media[0].url
+            }" alt="${listing.media.alt ? listing.media.alt : ""}" />`
+          : `<img class="w-full h-full object-cover" src="/src/media/Komplett_wallpaper_2022_3rdplace_preciousillusion_dark.jpg" alt="Default image" />`
+      }
+      <div 
+        class="absolute bottom-3 left-3 bg-black bg-opacity-50 text-white text-sm font-bold px-3 py-1 rounded-full shadow-sm"
+      >
+        ${highestBid}
+      </div>
+    </div>
+    <div class="max-w-[300px] py-4 px-3 bg-[#f3f3f3] rounded-b-md text-center">
+      <h2 class="font-bold text-lg truncate text-[#333]">${listing.title}</h2>
+      <p class="text-sm text-gray-500">${listing.endsAt}</p>
+    </div>
+  </a>
 `;
       })
       .join("");

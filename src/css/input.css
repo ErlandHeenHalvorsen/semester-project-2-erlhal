@@ -11,7 +11,7 @@
 }
 
 .cta-custom {
-  @apply bg-cta hover:bg-red-600 text-white px-4 py-2 rounded transition duration-200;
+  @apply bg-ctaNegative hover:bg-red-600 text-white px-4 py-2 rounded transition duration-200;
 }
 .input-custom {
   @apply w-full mt-1 px-4 py-2 border border-accent rounded-lg shadow-sm outline-none;

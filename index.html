@@ -11,31 +11,38 @@
     ></script>
     <link rel="stylesheet" href="/src/css/output.css" />
   </head>
-  <body class="min-h-screen flex flex-col">
+  <body class="min-h-screen bg-primary flex flex-col">
     <nav-bar></nav-bar>
-    <!-- Search Bar -->
-    <section class="flex justify-center items-center bg-primary">
-      <div class="flex flex-col mx-6 p-4 space-y-4">
-        <h1 class="text-3xl text-center text-cta">
-          Lets Find Something Useless!
-        </h1>
-        <div class="flex flex-col gap-4">
+
+    <!-- Search Section -->
+    <div class="container mx-auto flex flex-col items-center mt-8 px-4 md:px-0">
+      <h1 class="text-2xl font-bold text-center text-[#333] mb-6">
+        Discover and Bid on Anything You Desire
+      </h1>
+      <div class="p-6 w-full md:w-2/3 lg:w-1/2">
+        <div class="flex flex-col gap-2">
           <input
             type="text"
             id="search"
-            class="p-2 rounded-md"
-            placeholder="Search for a home"
+            class="p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#B18461] mb-4"
+            placeholder="Search for cool stuff"
           />
-          <button id="searchButton" class="bg-accent text-white p-2 rounded-md">
+          <button
+            id="searchButton"
+            class="bg-[#B18461] text-white py-2 rounded-md hover:bg-[#8F6B51] transition duration-200 w-full"
+          >
             Search
           </button>
         </div>
       </div>
-    </section>
+    </div>
     <!-- Listings homepage -->
+    <h2 class="text-2xl font-bold text-center text-[#333] mb-3 mt-10">
+      Newest listings
+    </h2>
     <section
       id="listings"
-      class="flex-1 flex justify-center items-center flex-wrap gap-6 p-8 bg-primary"
+      class="flex-1 flex justify-center items-center flex-wrap gap-6 p-8 bg-[#fafafa]"
     ></section>
     <footer-nav class="sticky bottom-0"></footer-nav>
   </body>

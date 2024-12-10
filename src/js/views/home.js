@@ -21,7 +21,7 @@ async function renderListings(listings) {
       }
 
       html += `
-        <a class="border-2 border-accent border-opacity-40 rounded-lg shadow-sm hover:shadow-md transition-all ease-in-out duration-150" href="/html/listings/singleListing.html?id=${
+        <a class="border-2 bg-secondary border-accent border-opacity-40 rounded-lg shadow-inner-xl hover:shadow-md transition-all ease-in-out duration-150" href="/html/listings/singleListing.html?id=${
           listing.id
         }">
           <div
@@ -35,7 +35,7 @@ async function renderListings(listings) {
               : `<img class="w-full h-full object-cover" src="/src/media/Komplett_wallpaper_2022_3rdplace_preciousillusion_dark.jpg" alt="Random image" />`
           } 
             <p 
-              class="absolute bottom-4 left-4 font-bold text-black bg-primary bg-opacity-40 p-2 rounded-md"
+              class="absolute bottom-4 left-4 font-bold text-black bg-primary bg-opacity-60 p-2 rounded-md"
             >
               ${highestBid}
             </p>
