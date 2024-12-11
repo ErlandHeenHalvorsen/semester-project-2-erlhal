@@ -15,6 +15,8 @@ loginBtn.addEventListener("click", async (e) => {
       setUsername(loginUser.name);
       console.log("User logged in successfully:", loginUser);
       window.location.href = "/";
+    } else {
+      window.alert("Invalid email or password");
     }
   } catch (error) {
     console.error(error);
