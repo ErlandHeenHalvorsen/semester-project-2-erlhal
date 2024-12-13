@@ -21,8 +21,8 @@ export default class FooterNav extends HTMLElement {
       class="md:hidden flex bg-opacity-85 border-t-2 border-opacity-40 w-full"
       style="background-color: rgba(245, 245, 245, 0.85); border-color: #cccccc;"
     >
-      <div class="flex mx-8 p-2 justify-between items-center w-full gap-x-4" aria-label="Home Page">
-        <a href="/index.html" class="p-2">
+      <div class="flex mx-8 p-2 justify-between items-center w-full gap-x-4" >
+        <a href="/index.html" class="p-2" aria-label="Home Page">
             <i class="fa-solid fa-house fa-2xl"></i>
         </a>
         <a href="${createListingLink}" class="p-2" aria-label="Create Listing Page">
