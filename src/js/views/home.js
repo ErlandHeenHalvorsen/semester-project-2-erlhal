@@ -32,7 +32,7 @@ async function renderListings(listings) {
               ? `<img class="w-full h-full object-cover" src="${
                   listing.media[0].url
                 }" alt="${listing.media.alt ? listing.media.alt : ""}" />`
-              : `<img class="w-full h-full object-cover" src="/src/media/Komplett_wallpaper_2022_3rdplace_preciousillusion_dark.jpg" alt="Random image" />`
+              : `<img class="w-full h-full object-cover" src="/src/media/basic_placeholder.png" alt="Placeholder" />`
           } 
             <p 
               class="absolute bottom-4 left-4 font-bold text-black bg-primary bg-opacity-60 p-2 rounded-md"

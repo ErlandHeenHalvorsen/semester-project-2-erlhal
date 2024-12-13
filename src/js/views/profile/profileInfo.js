@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
           ? `<img class="w-full h-full object-cover" src="${
               listing.media[0].url
             }" alt="${listing.media.alt ? listing.media.alt : ""}" />`
-          : `<img class="w-full h-full object-cover" src="/src/media/Komplett_wallpaper_2022_3rdplace_preciousillusion_dark.jpg" alt="Default image" />`
+          : `<img class="w-full h-full object-cover" src="/src/media/basic_placeholder.png" alt="Default image" />`
       }
       <div 
         class="absolute bottom-3 left-3 bg-black bg-opacity-50 text-white text-sm font-bold px-3 py-1 rounded-full shadow-sm"
