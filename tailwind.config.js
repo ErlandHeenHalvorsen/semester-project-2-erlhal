@@ -4,13 +4,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#fafafa", // Soft white
-        secondary: "#f2f2f2", // Light gray
+        primary: "#fafafa",
+        secondary: "#f2f2f2",
         accent: "#cccccc",
-        accent2: "#333", // Muted gray
-        cta: "#B18461", // Blue
-        ctaPositive: "#198754", // Green
-        ctaNegative: "#DC3545", // Red
+        accent2: "#333",
+        cta: "#8F6B51",
+        ctaPositive: "#198754",
+        ctaNegative: "#DC3545",
       },
     },
   },
